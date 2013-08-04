@@ -2,3 +2,5 @@ README file for Books4Rent
 * Books4Rent will be a service that can be easily deployed
 * The service will be RESTful and it will respond using JSON
 * Clients will connect to the service and will consume its responses
+
+This page was modified in project folder
