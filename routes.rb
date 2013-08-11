@@ -1,5 +1,9 @@
 require 'sinatra'
 
+get '/' do
+	'Service is up'
+end
+
 get '/welcome.html' do
 	#"Hello world"
 	send_file "welcome.html"
