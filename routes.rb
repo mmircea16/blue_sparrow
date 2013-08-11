@@ -1,9 +1,11 @@
 require 'sinatra'
 
-get '/welcome' do
-	send_file File.join("/","welcome.html")
+get '/welcome.html' do
+	#"Hello world"
+	send_file "welcome.html"
 end
 
 get '/README' do
-	send_file File.join("/","README")
+	content_type "text/plain"
+	send_file "README"
 end
