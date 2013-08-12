@@ -13,3 +13,12 @@ get '/README' do
 	content_type "text/plain"
 	send_file File.join(File.dirname(__FILE__),"README")
 end
+
+get '/books' do
+	'{"books":[{"book":"Agile Testing"}]}'
+	
+end
+
+post '/books' do
+	'{"status":"ok"}'
+end
