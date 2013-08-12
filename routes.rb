@@ -6,10 +6,10 @@ end
 
 get '/welcome.html' do
 	#"Hello world"
-	send_file "welcome.html"
+	send_file File.join(File.dirname(__FILE__),"welcome.html")
 end
 
 get '/README' do
 	content_type "text/plain"
-	send_file "README"
+	send_file File.join(File.dirname(__FILE__),"README")
 end
