@@ -1,10 +1,11 @@
+require 'data_mapper'
 class Book
-	attr_accessor :title, :owner
+
+	include DataMapper::Resource
 	
-	def initialize title, owner
-		@title = title
-		@owner = owner
-	end
+	property :id, Serial
+	property :title, String
+	property :owner, String
 
 	def == another_book
 		@title==another_book.title and @owner==another_book.owner
