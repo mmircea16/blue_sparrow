@@ -20,6 +20,7 @@ get '/README' do
 end
 
 get '/books' do
+  content_type "application/json"
   @mapper = Mapper.new
   @book_controller = BookController.new
   @book_controller.inject_mapper @mapper
@@ -27,6 +28,7 @@ get '/books' do
 end
 
 post '/books' do
+  content_type "application/json"
   @mapper = Mapper.new
   @book_controller = BookController.new
   @book_controller.inject_mapper @mapper
