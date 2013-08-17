@@ -1,7 +1,6 @@
 require 'sinatra'
-require_relative 'book_controller'
-require_relative 'mapper'
-
+require_relative 'src/book_controller'
+require_relative 'src/mapper'
 
 
 
