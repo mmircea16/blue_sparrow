@@ -9,16 +9,6 @@ get '/' do
 	'Service is up'
 end
 
-get '/welcome.html' do
-	#"Hello world"
-	send_file File.join(File.dirname(__FILE__),"welcome.html")
-end
-
-get '/README' do
-	content_type "text/plain"
-	send_file File.join(File.dirname(__FILE__),"README")
-end
-
 get '/books' do
   content_type "application/json"
   @mapper = Mapper.new
