@@ -1,8 +1,15 @@
 require 'sinatra'
+
+if ARGV.size > 0
+  config_file = ARGV[0]
+else
+  config_file = './env.rb'
+end
+
+require config_file
+
 require_relative 'src/book_controller'
 require_relative 'src/mapper'
-
-
 
 get '/' do
 	'Service is up'
