@@ -1,6 +1,8 @@
 require 'rspec'
-require_relative '../mapper'
-require_relative '../book_controller'
+require 'data_mapper'
+require_relative 'data_mapper_setup_tests'
+require_relative '../src/mapper'
+require_relative '../src/book_controller'
 
 describe 'Integration with db' do
 

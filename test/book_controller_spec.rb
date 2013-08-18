@@ -1,6 +1,6 @@
 require 'rspec'
-require_relative '../book.rb'
-require_relative '../book_controller.rb'
+require_relative '../src/book.rb'
+require_relative '../src/book_controller.rb'
 require_relative 'data_mapper_setup_tests'
 
 describe 'BookController' do

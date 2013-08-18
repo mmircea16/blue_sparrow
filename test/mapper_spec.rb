@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../mapper.rb'
+require_relative '../src/mapper.rb'
 
 describe 'Mapper' do
 	
