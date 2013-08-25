@@ -82,11 +82,18 @@
       <hr>
 
     <table id='books' class="table table-hover">
+      <thead><td>Title</td><td>Owner</td></thead>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book["title"] %></td>
+          <td><%= book["owner"] %></td>
+        </tr>
+      <% end %>
+    </table>
 
-      </table>
 
+    <a class="btn btn-primary" type="button" href="/add_book.html">Add your own book</a>
 
-        <a class="btn btn-primary" type="button" href="/add_book.html">Add your own book</a>
 
       <hr>
 
@@ -100,7 +107,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/jquery.js"></script>
-    <script src="assets/loader.js"></script>
 
   </body>
 </html>

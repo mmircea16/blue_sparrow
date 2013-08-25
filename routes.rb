@@ -32,3 +32,11 @@ post '/books' do
   @book_controller.save_book_from_json json_format
 	'{"status":"ok"}'
 end
+
+get '/add_book.html' do
+  erb :add_book
+end
+
+get '/books.html' do
+  erb :books
+end

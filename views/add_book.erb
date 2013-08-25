@@ -76,7 +76,7 @@
 
       <hr>
 
-        <form>
+        <form action="/books" method="POST">
             <fieldset>
                 <legend>Add a new book</legend>
                 <label>Book title</label>
@@ -85,7 +85,7 @@
                 <label>Owner</label>
                 <input type="text" id="owner" placeholder="Your name" name="owner">
 
-                <button type="button" class="btn" onclick="post_book($('#title').val(),$('#owner').val())">Add a new book</button>
+                <button type="submit" class="btn">Add a new book</button>
             </fieldset>
         </form>
       
