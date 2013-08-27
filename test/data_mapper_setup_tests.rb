@@ -1,2 +1,2 @@
-require '../env_local'
-require '../src/data_mapper_setup'
+DataMapper.setup :default, "abstract::"
+DataMapper.finalize
