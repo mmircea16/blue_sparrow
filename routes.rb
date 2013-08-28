@@ -38,7 +38,7 @@ post '/books' do
 end
 
 get '/add_book.html' do
-  erb :add_book
+  haml :add_book, :layout => false
 end
 
 get '/books.html' do
