@@ -1,17 +1,16 @@
 #sinatra_authentication
   %h1.page_title Users
   %table
-    %tr
-      %th
+    %thead
+      %td Email
       - if current_user.admin?
-        %th permission level
+        %td Permission level
+
     - @users.each do |user|
       %tr
         %td
           - if user.email
             = user.email
-          - elsif user.fb_uid
-            <fb:name uid=#{user.fb_uid} />
           - else
             "user #{user.id}"
         - if current_user.admin?

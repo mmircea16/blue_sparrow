@@ -1,6 +1,6 @@
 #sinatra_authentication
   %h1.page_title Sign Up
-  %form.form-horizontal{:action => "/signup", :method => "post"}
+  %form{:action => "/signup", :method => "post"}
     .control-group
       %label.control-label{:for => "user_email", :style => "margin-right: 20px;"} Email:
       %input{ :id => "user_email", :name => "user[email]", :size => 30, :type => "text" , :value => params[:email]}
