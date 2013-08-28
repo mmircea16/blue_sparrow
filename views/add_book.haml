@@ -1,46 +1,15 @@
-<!DOCTYPE html>
-%html
-  %head
-    %meta{:charset => "utf-8"}
-    %title Blue sparrow
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-
-    %link{ :href => "assets/bootstrap.css", :rel => "stylesheet"}
-    %link{ :href => "assets/bootstrap-responsive.css", :rel => "stylesheet"}
-    %link{ :href => "assets/add_book.css", :rel => "stylesheet"}
-
-  %body
-
-    .container-narrow
-
-      .masthead
-        %ul.nav.nav-pills.pull-right
-          %li.active
-            %a{ :href => "#"} Home
-          %li
-            %a{ :href => "#"} About
-          %li
-            %a{ :href => "#"} Contact Us
-        %h3.muted Blue Sparrow
-
-      %hr
-
-      %form{ :action => "/books", :method => "POST"}
-        %fieldset
-          %legend Add a new book
-
-          %label Book title
-          %input{ :type => "text", :id => "title", :placeholder => "The three musketeers", :name => "title"}
-
-          %label Owner
-          %input{ :type => "text", :id => "owner", :placeholder => "Your name", :name => "owner"}
-
-          %button{ :type => "submit", :class => "btn"} Add a new book
-
-      %hr
-
-      .footer
-        %p &copy; Mircea Moise 2013
 
 
-    %script{ :src => "assets/jquery.js"}
+%form{ :action => "/books", :method => "POST"}
+ %fieldset
+  %legend Add a new book
+
+  %label Book title
+  %input{ :type => "text", :id => "title", :placeholder => "The three musketeers", :name => "title"}
+
+  %label Owner
+  %input{ :type => "text", :id => "owner", :placeholder => "Your name", :name => "owner"}
+
+  %button{ :type => "submit", :class => "btn"} Add a new book
+
+

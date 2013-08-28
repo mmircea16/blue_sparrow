@@ -38,10 +38,10 @@ post '/books' do
 end
 
 get '/add_book.html' do
-  haml :add_book, :layout => false
+  haml :add_book
 end
 
 get '/books.html' do
   @books = @book_controller.get_all
-  haml :books, :layout => false
+  haml :books
 end
