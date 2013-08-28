@@ -10,46 +10,7 @@
     <!-- Le styles -->
     <link href="assets/bootstrap.css" rel="stylesheet">
     <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
 
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 60px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-	}
-
-	thead {
-		font-size: 20px;
-		font-weight: 500;
-      }
     </style>
     <link href="assets/bootstrap-responsive.css" rel="stylesheet">
 
@@ -81,19 +42,6 @@
 
       <hr>
 
-    <table id='books' class="table table-hover">
-      <thead><td>Title</td><td>Owner</td></thead>
-      <% @books.each do |book| %>
-        <tr>
-          <td><%= book["title"] %></td>
-          <td><%= book["owner"] %></td>
-        </tr>
-      <% end %>
-    </table>
-
-
-    <a class="btn btn-primary" type="button" href="/add_book.html">Add your own book</a>
-
 
       <hr>
 
@@ -110,3 +58,6 @@
 
   </body>
 </html>
+
+
+

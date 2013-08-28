@@ -43,5 +43,5 @@ end
 
 get '/books.html' do
   @books = @book_controller.get_all
-  erb :books
+  haml :books, :layout => false
 end
