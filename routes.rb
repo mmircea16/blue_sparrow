@@ -18,7 +18,10 @@ require config_file
 require_relative 'src/book_controller'
 require_relative 'src/mapper'
 
+
 DataMapper.auto_migrate!
+
+set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
 
 before do
   @book_controller = BookController.new
@@ -26,8 +29,7 @@ end
 
 
 get '/' do
-  send(:erb,"<h1>fasf</h1>",:layout => false)
-
+  "Service is up"
 end
 
 

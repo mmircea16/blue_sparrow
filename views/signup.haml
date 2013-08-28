@@ -1,28 +1,20 @@
 #sinatra_authentication
-  - if Rack.const_defined?('Flash') && flash[:notice]
-    #sinatra_authentication_flash= flash[:notice]
-  - if Rack.const_defined?('Flash') && flash[:error]
-    #sinatra_authentication_flash= flash[:error]
   %h1.page_title Sign Up
-  %form{:action => "/signup", :method => "post"}
-    .field
-      .label
-        %label{:for => "user_email"} Email
+  %form.form-horizontal{:action => "/signup", :method => "post"}
+    .control-group
+      %label.control-label{:for => "user_email", :style => "margin-right: 20px;"} Email:
       %input{ :id => "user_email", :name => "user[email]", :size => 30, :type => "text" , :value => params[:email]}
-    .field
-      .label
-        %label{:for => "user_password"} Password
+    .control-group
+      %label.control-label{:for => "user_password", :style => "margin-right: 20px;"} Password:
       %input{ :id => "user_password", :name => "user[password]", :size => 30, :type => "password" }
-    .field
-      .label
-        %label{:for => "user_password_confirmation"} Confirm Password
+    .control-group
+      %label.control-label{:for => "user_password_confirmation", :style => "margin-right: 20px;"} Confirm Password:
       %input{ :id => "user_password_confirmation", :name => "user[password_confirmation]", :size => 30, :type => "password" }
-    .buttons
-      %input{ :value => "Sign up", :type => "submit" }
-      %a{:href => "/login", :class => 'sinatra_authentication_link'}
+    .control-group
+      .controls
+        %input.btn.btn-primary{ :value => "Sign up", :type => "submit" }
+  %p
+    %h4
+      or just
+      %a.btn.btn-inverse{:href => "/login", :class => 'sinatra_authentication_link'}
         Login
-    - if Sinatra.const_defined?('FacebookObject')
-      .third_party_signup
-        %h3.section_title One click signup:
-        .login_link.facebook_login
-          = render_facebook_connect_link('Signup using facebook', :size => 'large')
