@@ -33,13 +33,15 @@ get '/' do
 end
 
 
-post '/books' do
-  book_hash = {:title => @request["title"], :owner => @request["owner"]}
+post '/books'do
+  login_required
+  book_hash = {:title => @request["title"], :owner => current_user.email}
   @book_controller.create_and_save book_hash
 	redirect '/books.html'
 end
 
-get '/add_book.html' do
+get '/add_book.html'do
+  login_required
   haml :add_book
 end
 
