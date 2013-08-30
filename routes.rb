@@ -26,11 +26,18 @@ set :template_engine, :haml
 
 before do
   @book_controller = BookController.new
+  @menu_classes = { :home => [], :about_us => [], :contact => []}
 end
 
 
 get '/' do
+  @menu_classes['home'] = ['active']
   haml :home_page
+end
+
+get '/about_us' do
+  @menu_classes['about_us'] = ['active']
+  haml :about_us
 end
 
 

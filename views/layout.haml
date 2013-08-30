@@ -15,12 +15,12 @@
 
       .masthead
         %ul.nav.nav-pills.pull-right
-          %li.active
-            %a{ :href => "#"} Home
-          %li
-            %a{ :href => "#"} About
-          %li
-            %a{ :href => "#"} Contact Us
+          %li{ :class => @menu_classes['home'] }
+            %a{ :href => "/"} Home
+          %li{ :class => @menu_classes['about_us'] }
+            %a{ :href => "/about_us"} About Us
+          %li{ :class => @menu_classes['contact'] }
+            %a{ :href => "#"} Contact
         %h3.muted
           - if logged_in?
             = current_user.email
