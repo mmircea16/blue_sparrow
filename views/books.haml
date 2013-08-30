@@ -4,9 +4,15 @@
  %thead
   %td Title
   %td Owner
+  %td Link
  - @books.each do |book|
   %tr
-   %td #{book["title"]}
-   %td #{book["owner"]}
+   %td #{book['title']}
+   %td #{book['owner']}
+   %td
+    - if book['amazon_description'].size > 0
+     %a{ :href => book['amazon_description'] } Amazon link
+    - else
+     No description
 
 %a.btn.btn-primary{ :type => "button", :href => "/add_book.html"} Add your own book

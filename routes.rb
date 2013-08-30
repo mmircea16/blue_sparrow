@@ -49,7 +49,7 @@ end
 
 post '/books'do
   login_required
-  book_hash = {:title => @request["title"], :owner => current_user.email}
+  book_hash = {:title => @request["title"], :owner => current_user.email, :amazon_description => @request["amazon_description"]}
   @book_controller.create_and_save book_hash
 	redirect '/books'
 end
