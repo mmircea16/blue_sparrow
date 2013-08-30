@@ -31,6 +31,7 @@ end
 
 
 get '/' do
+  redirect '/books' if logged_in?
   @menu_classes['home'] = ['active']
   haml :home_page
 end
@@ -50,7 +51,7 @@ post '/books'do
   login_required
   book_hash = {:title => @request["title"], :owner => current_user.email}
   @book_controller.create_and_save book_hash
-	redirect '/books.html'
+	redirect '/books'
 end
 
 get '/add_book.html'do
@@ -58,7 +59,7 @@ get '/add_book.html'do
   haml :add_book
 end
 
-get '/books.html' do
+get '/books' do
   @books = @book_controller.get_all
   haml :books
 end
