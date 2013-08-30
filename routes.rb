@@ -19,9 +19,10 @@ require_relative 'src/book_controller'
 require_relative 'src/mapper'
 
 
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!
 
 set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/"
+set :template_engine, :haml
 
 before do
   @book_controller = BookController.new
@@ -29,7 +30,7 @@ end
 
 
 get '/' do
-  "Service is up"
+  haml :home_page
 end
 
 
