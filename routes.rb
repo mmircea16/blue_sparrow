@@ -40,6 +40,11 @@ get '/about_us' do
   haml :about_us
 end
 
+get '/contact' do
+  @menu_classes['contact'] = ['active']
+  haml :contact
+end
+
 
 post '/books'do
   login_required
