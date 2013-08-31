@@ -37,3 +37,5 @@
 
 
     %script{ :src => "assets/jquery.js"}
+    - @optional_js.each do |script|
+      %script{ :src => "assets/#{script}" }

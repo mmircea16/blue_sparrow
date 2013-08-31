@@ -27,6 +27,7 @@ set :template_engine, :haml
 before do
   @book_controller = BookController.new
   @menu_classes = { :home => [], :about_us => [], :contact => []}
+  @optional_js = []
 end
 
 
@@ -55,6 +56,7 @@ post '/books'do
 end
 
 get '/add_book.html'do
+  @optional_js << 'google_api.js'
   login_required
   haml :add_book
 end
