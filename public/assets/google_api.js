@@ -25,7 +25,7 @@ $(document).ready(function() {
         search_for_book($("#title").val());
     })
     $('#search_modal').on('hide', function() {
-        var selected_title = $("#results_list tr.success:nth-child(1)").text();
+        var selected_title = $("#results_list tr.success").children()[1].innerHTML;
         $("#title").val(selected_title);
     })
 });
