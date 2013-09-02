@@ -50,7 +50,14 @@ end
 
 post '/books'do
   login_required
-  book_hash = {:title => @request["title"], :owner => current_user.email, :amazon_description => @request["amazon_description"]}
+
+  book_hash = {
+      :title => @request["title"],
+      :owner => current_user.email,
+      :amazon_description => @request["amazon_description"],
+      :isbn_13 => @request["isbn"]
+  }
+
   @book_controller.create_and_save book_hash
 	redirect '/books'
 end
@@ -62,6 +69,8 @@ get '/add_book.html'do
 end
 
 get '/books' do
+  @optional_js << 'google_api.js'
+  @optional_js << 'books.js'
   @books = @book_controller.get_all
   haml :books
 end

@@ -16,12 +16,25 @@ function handle_response(response) {
 
 function search_for_book (query) {
     query = query.replace(" ","+");
+    call_books_api_with_query_and_callback(query,"handle_response");
+}
+
+
+
+function call_books_api_with_query_and_callback(query, callback) {
     $.ajax({
-        url: "https://www.googleapis.com/books/v1/volumes?q="+query+"&callback=handle_response",
+        url: "https://www.googleapis.com/books/v1/volumes?q="+query+"&callback="+callback,
         dataType: "jsonp"
     });
 }
 
+
+function get_isbn_13(data) {
+    for (var i in data.volumeInfo.industryIdentifiers) {
+        if (data.volumeInfo.industryIdentifiers[i].type == "ISBN_13") return data.volumeInfo.industryIdentifiers[i].identifier;
+    }
+    return "";
+}
 $(document).ready(function() {
     $('#search_modal').on('shown', function() {
         search_for_book($("#title").val());
@@ -30,10 +43,7 @@ $(document).ready(function() {
         var selected_element = $("#results_list tr.success");
         var data = selected_element.data("item");
         var selected_title = data.volumeInfo.title;
-        var isbn_13 = "";
-        for (var i in data.volumeInfo.industryIdentifiers){
-            if (data.volumeInfo.industryIdentifiers[i].type == "ISBN_13") isbn_13 = data.volumeInfo.industryIdentifiers[i].identifier;
-        }
+        var isbn_13 = get_isbn_13(data);;
 
         $("#title").val(selected_title);
         $("#isbn").val(isbn_13)

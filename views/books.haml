@@ -2,11 +2,14 @@
 
 %table#books.table.table-hover
  %thead
+  %td Cover
   %td Title
   %td Owner
   %td Link
  - @books.each do |book|
   %tr
+   %td
+    %img.cover{ :'data-isbn' => book['isbn_13'] }
    %td #{book['title']}
    %td #{book['owner']}
    %td
