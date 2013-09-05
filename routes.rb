@@ -2,6 +2,7 @@ require 'sinatra'
 require "dm-core"
 #for using auto_migrate!
 require "dm-migrations"
+require './src/monkey_patches/data_mapper_patch'
 require "digest/sha1"
 require "sinatra-authentication"
 
@@ -62,7 +63,7 @@ post '/books'do
 	redirect '/books'
 end
 
-get '/add_book.html'do
+get '/add_book'do
   @optional_js << 'google_api.js'
   login_required
   haml :add_book
@@ -71,6 +72,10 @@ end
 get '/books' do
   @optional_js << 'google_api.js'
   @optional_js << 'books.js'
-  @books = @book_controller.get_all
+  if params["query"].nil?
+    @books = @book_controller.get_all
+  else
+    @books = @book_controller.search_for(params["query"])
+  end
   haml :books
 end

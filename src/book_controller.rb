@@ -11,5 +11,9 @@ class BookController
     book.save!
   end
 
+  def search_for(query)
+    Book.all( :title.ilike => "%#{query}%" )
+  end
+
 
 end
