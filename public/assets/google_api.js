@@ -1,3 +1,11 @@
+var table_row_partial = "<tr>" +
+    "<td> <img class='cover' src=''/></td>" +
+    "<td>" +
+    " <div class='title'></div>" +
+    " <div class='authors'></div>" +
+    " </td>" +
+    "</tr>";
+
 
 function handle_response(response) {
    console.log(response);
@@ -6,8 +14,10 @@ function handle_response(response) {
        var item = response.items[i];
        console.log(item);
 //       alert("<tr><td> <img src='"+item.volumeInfo.imageLinks.smallThumbnail+"'/></td><td>"+item.volumeInfo.title+"</td></tr>");
-       var tr = $("<tr><td> <img src='"+item.volumeInfo.imageLinks.smallThumbnail+"'/></td><td>"+item.volumeInfo.title+"</td></tr>");
-
+       var tr = $(table_row_partial);// $("<tr><td> <img src='"+item.volumeInfo.imageLinks.smallThumbnail+"'/></td><td>"+item.volumeInfo.title+"</td></tr>");
+       tr.find(".cover").attr('src',item.volumeInfo.imageLinks.smallThumbnail);
+       tr.find(".title").text(item.volumeInfo.title);
+       tr.find(".authors").text(get_authors(item));
        $("#results_list").append(tr);
        tr.data("item",item);
    }
@@ -29,6 +39,12 @@ function call_books_api_with_query_and_callback(query, callback) {
     });
 }
 
+
+function get_authors(data) {
+     if (data.volumeInfo.authors != undefined)
+      return data.volumeInfo.authors.join(", ");
+     else "";
+}
 
 function get_isbn_13(data) {
     for (var i in data.volumeInfo.industryIdentifiers) {

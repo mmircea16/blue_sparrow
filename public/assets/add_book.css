@@ -38,3 +38,11 @@ thead {
     font-size: 20px;
     font-weight: 500;
 }
+
+.title {
+    font-weight: 500;
+}
+
+.authors {
+    color: #888888;
+}
