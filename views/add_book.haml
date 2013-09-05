@@ -4,19 +4,22 @@
   %fieldset
    %legend Add a new book
 
-   %label Book title
-   %div.input-append
-    %input{ :type => "text", :id => "title", :placeholder => "The three musketeers", :name => "title"}
-     %a.btn{ :href => "#search_modal", :'data-toggle' => "modal"} Search
+   .control-group
+    %label.control-label Book title
+    %div.input-append
+     %input.span3{ :type => "text", :id => "title", :placeholder => "The three musketeers", :name => "title"}
+      %a.btn{ :href => "#search_modal", :'data-toggle' => "modal"} Search
 
-   %label Amazon description
-   %input{ :type => "text", :id => "amazon", :placeholder => "www.amazon.com", :name => "amazon_description"}
+   .control-group
+    %label.control-label ISBN - 13
+    %input.span3{ :type => "text", :id => "isbn", :placeholder => "a 13 character string", :name => "isbn"}
 
-   %label ISBN - 13
-   %input{ :type => "text", :id => "isbn", :placeholder => "a 13 character string", :name => "isbn"}
+   .control-group
+    %label.control-label Additional info - Amazon link
+    %input.span3{ :type => "text", :id => "amazon", :placeholder => "www.amazon.com", :name => "amazon_description"}
 
-
-   %button{ :type => "submit", :class => "btn"} Add a new book
+   .controls
+    %button.btn.btn-primary{ :type => "submit", :class => "btn"} Add a new book
 
 
 
