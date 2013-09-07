@@ -8,6 +8,8 @@
     %link{ :href => "/assets/bootstrap.css", :rel => "stylesheet"}
     %link{ :href => "/assets/bootstrap-responsive.css", :rel => "stylesheet"}
     %link{ :href => "/assets/add_book.css", :rel => "stylesheet"}
+    %link{ :href => "/assets/bootstrap_data_table.css", :rel => "stylesheet"}
+    %link{ :href => 'http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css', :rel => 'stylesheet'}
 
   %body
 
@@ -38,5 +40,6 @@
 
     %script{ :src => "assets/jquery.js"}
     %script{ :src => "assets/bootstrap-modal.js"}
+    %script{ :src => 'http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'}
     - @optional_js.each do |script|
       %script{ :src => "assets/#{script}" }

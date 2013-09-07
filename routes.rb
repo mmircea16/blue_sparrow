@@ -72,6 +72,7 @@ end
 get '/books' do
   @optional_js << 'google_api.js'
   @optional_js << 'books.js'
+  @optional_js << 'bootstrap_data_table.js'
   if params["query"].nil?
     @books = @book_controller.get_all
   else
