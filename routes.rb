@@ -2,7 +2,7 @@ require 'sinatra'
 require "dm-core"
 #for using auto_migrate!
 require "dm-migrations"
-require './src/monkey_patches/data_mapper_patch'
+require_relative 'src/monkey_patches/data_mapper_patch'
 require "digest/sha1"
 require "sinatra-authentication"
 
