@@ -61,6 +61,14 @@ function get_thumbnail(data){
 
 }
 
+function get_description_link(data){
+    if (data.volumeInfo.canonicalVolumeLink != undefined)
+        return data.volumeInfo.canonicalVolumeLink;
+    else
+        return '';
+
+}
+
 
 function select_book(){
     var selected_element = $("#results_list tr.success");
@@ -71,6 +79,7 @@ function select_book(){
     $("#title").val(selected_title);
     $("#isbn").val(isbn_13);
     $("#cover").val(get_thumbnail(data))
+    $("#google_books_description").val(get_description_link(data))
     console.log("select book");
 }
 

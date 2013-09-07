@@ -57,7 +57,8 @@ post '/books'do
       :owner => current_user.email,
       :amazon_description => @request["amazon_description"],
       :isbn_13 => @request["isbn"],
-      :cover => @request["cover"]
+      :cover => @request["cover"],
+      :google_books_description => @request["google_books_description"]
   }
 
   @book_controller.create_and_save book_hash

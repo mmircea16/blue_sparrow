@@ -14,7 +14,9 @@
    %td #{book['owner']}
    %td
     - if book['amazon_description'].size > 0
-     %a{ :href => book['amazon_description'] } Amazon link
+     %a{ :href => book['amazon_description'] } On Amazon
+    - elsif book['google_books_description'].size > 0
+     %a{ :href => book['google_books_description'] } On Google Books
     - else
      No description
 
