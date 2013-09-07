@@ -9,7 +9,7 @@
  - @books.each do |book|
   %tr
    %td
-    %img.cover{ :'data-isbn' => book['isbn_13'] }
+    %img.cover{ :'data-isbn' => book['isbn_13'], :src => book['cover'] }
    %td #{book['title']}
    %td #{book['owner']}
    %td

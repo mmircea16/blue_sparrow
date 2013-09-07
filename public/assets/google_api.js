@@ -53,6 +53,15 @@ function get_isbn_13(data) {
     return "";
 }
 
+function get_thumbnail(data){
+   if ((data.volumeInfo.imageLinks != undefined) && (data.volumeInfo.imageLinks.smallThumbnail != undefined))
+    return data.volumeInfo.imageLinks.smallThumbnail;
+   else
+    return '';
+
+}
+
+
 function select_book(){
     var selected_element = $("#results_list tr.success");
     var data = selected_element.data("item");
@@ -61,6 +70,7 @@ function select_book(){
 
     $("#title").val(selected_title);
     $("#isbn").val(isbn_13);
+    $("#cover").val(get_thumbnail(data))
     console.log("select book");
 }
 
